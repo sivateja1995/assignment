@@ -14,7 +14,6 @@ const statesSchema = new mongoose.Schema(({
     },
     abbrev:{
         type:String,
-        required:true,
     }
 }))
 
