@@ -14,5 +14,5 @@ http://localhost:3000/states
 }
 
 
-## for get 
+## for get  pass statecode or will fetch all states
 http://localhost:3000/states?code='<statecode>'
