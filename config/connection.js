@@ -4,15 +4,14 @@ const mongoose = require("mongoose");
 mongoose
   .connect(process.env.BACKEND_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
+    useUnifiedTopology: true
   })
   .then(
     () => {
       console.log("successfully connected to the database");
     },
     (error) => {
+      console.log(process.env.BACKEND_URL)
       console.log("connection error:" + error);
     }
   );
