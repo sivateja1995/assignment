@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+// toster css.
+@import 'ngx-toastr/toastr';
+@import "bootstrap/scss/bootstrap";
+
+
+:root {
+  --grey: #f6f1e9;
+  --yellow: #ffd93d;
+  --black: #000;
+  --white: #fff;
+  --border: #989898;
+  --list-text-color: #737373;
+  --dark-blue-bg: #001c5b;
+  --light-yellow: #f7fdf3;
+}
+

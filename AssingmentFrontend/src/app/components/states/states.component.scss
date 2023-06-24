@@ -1,0 +1,17 @@
+
+
+.container{
+  padding: 1rem;
+  border: solid 2px var(--grey);
+  width: 75% !important;
+  box-shadow: 1.5px 3px var(--border);
+}
+
+
+label{
+  color: var(--list-text-color);
+}
+
+input{
+  color: var(--list-text-color);
+}
