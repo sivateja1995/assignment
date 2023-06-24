@@ -1,0 +1,68 @@
+<div class="container mt-5">
+  <div class="col">
+    <form #StateForm="ngForm" (submit)="StateForm.valid&&saveStateDetails(StateForm.value)">
+      <div class="mb-3">
+        <h3>Enter the State Details</h3>
+        <small
+          >Fill the form with following Details: state Name, state code & state
+          abbreviation</small
+        >
+      </div>
+      <!-- state name  -->
+      <div class="mb-3">
+        <label for="state" class="form-label">State</label>
+        <input
+          type="text"
+          class="form-control"
+          id="state"
+          name="state"
+          placeholder="Enter state name"
+          required
+          ngModel
+          #state="ngModel"
+        />
+        <small class="text-danger" *ngIf="state.touched && state.hasError('required')">
+          Enter the state name
+        </small>
+      </div>
+      <!-- end of the state name  -->
+
+      <!-- code name  -->
+      <div class="mb-3">
+        <label for="code" class="form-label">State Code</label>
+        <input
+          type="email"
+          class="form-control"
+          id="code"
+          name="code"
+          placeholder="Enter state code"
+          required="true"
+          ngModel
+          #code="ngModel"
+        />
+
+        <small class="text-danger" *ngIf="code.touched && code.hasError('required')">
+          Code is required
+        </small>
+      </div>
+      <!-- end of the code name  -->
+
+      <!-- abbreviation -->
+      <div class="mb-3">
+        <label for="abbr" class="form-label">State Abbrevation</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="Enter state abbreviation"
+          required="true"
+        />
+      </div>
+      <!-- end of the abbreviation  -->
+
+      <div class="mb-3 text-end">
+        <button class="btn btn-primary" type="submit">submit</button>
+      </div>
+    </form>
+  </div>
+</div>

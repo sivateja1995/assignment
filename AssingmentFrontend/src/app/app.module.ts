@@ -4,10 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
+import { StatesComponent } from './components/states/states.component';
+import { FormsModule } from '@angular/forms';
+import { StateService } from './services/state.service';
+import { CoreModule } from './core/core.module';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
+import { HttpInterceptor } from './core/interceptors/http-interceptor';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StatesComponent
   ],
   imports: [
     BrowserModule,
@@ -15,13 +23,27 @@ import { ToastrModule } from 'ngx-toastr';
     ToastrModule.forRoot({
       closeButton:true,
       preventDuplicates:true,
-      progressAnimation:'increasing',
-      positionClass:'tost-top-right',
+      positionClass:'toast-top-right',
       tapToDismiss:true,
-      timeOut:3000
-    })
+      timeOut:5000,
+    }),
+    FormsModule,
+    CoreModule,
+    HttpClientModule,
+    SharedModule
+
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:HttpInterceptor,
+      multi:true
+    },
+
+
+
+    StateService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
