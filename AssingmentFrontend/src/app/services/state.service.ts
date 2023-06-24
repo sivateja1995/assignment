@@ -9,9 +9,13 @@ import { HttpService } from '../shared/http.service';
 export class StateService {
   constructor(private http: HttpService) {}
 
-
   // method for the posting of the state
   public saveState(state: State): Observable<any> {
     return this.http.post('/states', state);
+  }
+
+  // get states
+  public getStates(code: string): Observable<any> {
+    return this.http.get('/states', { params: { code: code } });
   }
 }

@@ -29,7 +29,6 @@ export class HttpService {
   }
 
   public post(url: string, params: any): Observable<any> {
-    console.log(url)
     return this._http
       .post<any>(url, params, this.httpOptions)
       .pipe(

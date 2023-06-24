@@ -21,7 +21,6 @@ export class HttpInterceptor implements MainHttpInterceptor {
       request = request.clone({ headers });
       request = request.clone({ url: `${environment.backendUrl}${request.url}` });
     }
-    console.log(request)
     return next.handle(request);
   }
 }
